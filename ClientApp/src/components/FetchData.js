@@ -51,8 +51,9 @@ export class FetchData extends Component {
     );
   }
 
+  // This is just a class component way of fetching - better to use tanstack-query
   async populateWeatherData() {
-    const response = await fetch('weatherforecast');
+    const response = await fetch('weatherforecast');  // Note: it is using the relative url - https:localhost:wahtever/weatehrforecast
     const data = await response.json();
     this.setState({ forecasts: data, loading: false });
   }
